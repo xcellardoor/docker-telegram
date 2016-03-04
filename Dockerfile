@@ -2,7 +2,7 @@
 FROM debian:jessie
 MAINTAINER Christophe Boucharlat <christophe.boucharlat@gmail.com>
 
-# Telegram Version 0.9.18
+# Telegram Version 0.9.28
 
 RUN apt-get update && apt-get install -y \
     dbus-x11 \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     --no-install-recommends 
 
-RUN wget https://tdesktop.com/linux/tsetup.0.9.18.tar.xz -O /tmp/telegram.tar.xz && \
+RUN wget https://tdesktop.com/linux/tsetup.0.9.28.tar.xz -O /tmp/telegram.tar.xz && \
     cd /tmp/ && \
     tar xvfJ /tmp/telegram.tar.xz && \
     mv /tmp/Telegram/Telegram /usr/bin/Telegram && \
@@ -23,5 +23,5 @@ RUN wget https://tdesktop.com/linux/tsetup.0.9.18.tar.xz -O /tmp/telegram.tar.xz
 
 ENV QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
 
-# Autorun x11vnc
+# Autorun Telegram
 CMD ["/usr/bin/Telegram"]
